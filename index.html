@@ -1,574 +1,656 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>LEYLI MEDIA — Ovoz yozish studiyasi</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="LEYLI MEDIA — professional ovoz yozish studiyasi. Vocal, qo'shiq, podcast, voice-over va audio loyihalar uchun sifatli recording.">
+  <title>LEYLI MEDIA</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <meta name="description"
+        content="LEYLI MEDIA — eksklyuziv musiqa, media kontent va ijodiy materiallar uchun Telegram kanal.">
 
-html {
-    scroll-behavior: smooth;
-}
+  <style>
 
-body {
-    background: #080808;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
-}
-
-/* HEADER */
-
-header {
-    width: 100%;
-    padding: 18px 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: rgba(8, 8, 8, 0.82);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 105px;
-    height: 65px;
-    object-fit: contain;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    opacity: 0.55;
-}
-
-.telegram-top {
-    padding: 12px 20px;
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 30px;
-}
-
-/* HERO */
-
-.hero {
-    min-height: 100vh;
-    padding: 170px 7% 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(
-        circle,
-        rgba(255,255,255,0.13) 0%,
-        rgba(255,255,255,0) 70%
-    );
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.hero-content {
-    max-width: 1100px;
-    position: relative;
-    z-index: 2;
-}
-
-.small-title {
-    letter-spacing: 7px;
-    font-size: 13px;
-    margin-bottom: 25px;
-    color: #bdbdbd;
-}
-
-.hero h1 {
-    font-size: clamp(70px, 13vw, 180px);
-    line-height: 0.85;
-    letter-spacing: -7px;
-    font-weight: 900;
-    margin-bottom: 35px;
-}
-
-.hero h2 {
-    font-size: clamp(20px, 3vw, 34px);
-    font-weight: 400;
-    color: #d4d4d4;
-    margin-bottom: 22px;
-}
-
-.hero-text {
-    max-width: 650px;
-    margin: 0 auto 40px;
-    color: #999;
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-/* TELEGRAM */
-
-.telegram-box {
-    margin: 30px auto 0;
-    max-width: 720px;
-    padding: 35px;
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 25px;
-    background: rgba(255,255,255,0.045);
-    backdrop-filter: blur(15px);
-}
-
-.telegram-label {
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: #999;
-    margin-bottom: 12px;
-}
-
-.telegram-box h3 {
-    font-size: 30px;
-    margin-bottom: 12px;
-}
-
-.telegram-box p {
-    color: #aaa;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.telegram-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 30px;
-    border-radius: 40px;
-    background: #ffffff;
-    color: #080808;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.telegram-button:hover {
-    transform: translateY(-3px);
-    opacity: 0.85;
-}
-
-/* SERVICES */
-
-.services {
-    padding: 110px 7%;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.section-label {
-    color: #777;
-    letter-spacing: 4px;
-    font-size: 12px;
-    margin-bottom: 20px;
-}
-
-.services h2 {
-    font-size: clamp(45px, 7vw, 90px);
-    margin-bottom: 60px;
-    letter-spacing: -3px;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.service {
-    min-height: 250px;
-    padding: 35px;
-    border: 1px solid rgba(255,255,255,0.13);
-    border-radius: 22px;
-    background: rgba(255,255,255,0.035);
-    transition: 0.3s;
-}
-
-.service:hover {
-    transform: translateY(-7px);
-    border-color: rgba(255,255,255,0.35);
-}
-
-.service-number {
-    color: #666;
-    font-size: 13px;
-    margin-bottom: 50px;
-}
-
-.service h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.service p {
-    color: #999;
-    line-height: 1.6;
-}
-
-/* ABOUT */
-
-.about {
-    padding: 110px 7%;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.about h2 {
-    font-size: clamp(45px, 7vw, 90px);
-    margin-bottom: 30px;
-    letter-spacing: -3px;
-}
-
-.about-text {
-    max-width: 800px;
-    color: #999;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* CONTACT */
-
-.contact {
-    padding: 110px 7%;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: clamp(45px, 7vw, 90px);
-    margin-bottom: 25px;
-}
-
-.contact p {
-    color: #999;
-    margin-bottom: 35px;
-}
-
-.contact-button {
-    display: inline-block;
-    padding: 16px 35px;
-    border: 1px solid rgba(255,255,255,0.4);
-    border-radius: 40px;
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.contact-button:hover {
-    background: #fff;
-    color: #000;
-}
-
-/* FOOTER */
-
-footer {
-    padding: 35px 7%;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    justify-content: space-between;
-    color: #666;
-    font-size: 13px;
-}
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    header {
-        padding: 12px 20px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .logo img {
-        width: 85px;
-        height: 55px;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #050505;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 6%;
+
+      background: rgba(5, 5, 5, 0.82);
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 3px;
     }
 
     nav {
-        gap: 12px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
     }
 
-    nav a:not(.telegram-top) {
-        display: none;
+    nav a {
+      font-size: 14px;
+      color: #bdbdbd;
+      transition: 0.3s;
     }
 
-    .telegram-top {
-        padding: 9px 14px;
-        font-size: 12px;
+    nav a:hover {
+      color: #ffffff;
     }
+
+    .header-button {
+      padding: 12px 20px;
+
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+
+      font-size: 13px;
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .header-button:hover {
+      background: white;
+      color: black;
+    }
+
+    /* HERO */
 
     .hero {
-        padding: 140px 20px 60px;
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 120px 20px 80px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,255,255,0.10),
+          transparent 35%
+        ),
+        #050505;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+    }
+
+    .small-title {
+      font-size: 13px;
+      letter-spacing: 7px;
+      color: #999;
+      margin-bottom: 28px;
     }
 
     .hero h1 {
-        font-size: 70px;
-        letter-spacing: -4px;
+      font-size: clamp(55px, 12vw, 150px);
+
+      line-height: 0.9;
+
+      letter-spacing: -5px;
+
+      font-weight: 900;
+
+      margin-bottom: 35px;
     }
 
-    .hero-text {
-        font-size: 15px;
+    .hero h1 span {
+      display: block;
+      color: #ffffff;
     }
 
-    .telegram-box {
-        padding: 25px 18px;
+    .hero-description {
+      max-width: 700px;
+
+      margin: 0 auto 40px;
+
+      font-size: 18px;
+
+      line-height: 1.7;
+
+      color: #bdbdbd;
     }
 
-    .telegram-box h3 {
-        font-size: 24px;
+    .buttons {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
     }
 
-    .service-grid {
-        grid-template-columns: 1fr;
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-width: 210px;
+
+      padding: 16px 28px;
+
+      border-radius: 40px;
+
+      font-size: 14px;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+
+      cursor: pointer;
     }
 
-    .services,
-    .about,
-    .contact {
-        padding: 80px 20px;
+    .button-primary {
+      background: #ffffff;
+      color: #000000;
     }
+
+    .button-primary:hover {
+      transform: translateY(-3px);
+      background: #e8e8e8;
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #ffffff;
+    }
+
+    .button-secondary:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    /* TELEGRAM SECTION */
+
+    .telegram-section {
+      padding: 110px 20px;
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .section-container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 5px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .telegram-section h2 {
+      font-size: clamp(40px, 7vw, 80px);
+      line-height: 1;
+
+      margin-bottom: 30px;
+    }
+
+    .telegram-text {
+      max-width: 720px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      color: #aaa;
+
+      margin-bottom: 45px;
+    }
+
+    .features {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: 50px;
+    }
+
+    .feature {
+      padding: 30px;
+
+      min-height: 190px;
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.07),
+          rgba(255,255,255,0.02)
+        );
+    }
+
+    .feature-number {
+      font-size: 12px;
+      color: #777;
+
+      margin-bottom: 35px;
+    }
+
+    .feature h3 {
+      font-size: 22px;
+
+      margin-bottom: 12px;
+    }
+
+    .feature p {
+      color: #999;
+
+      line-height: 1.6;
+
+      font-size: 14px;
+    }
+
+    /* SUBSCRIPTION */
+
+    .subscription {
+      padding: 110px 20px;
+
+      background: #080808;
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .subscription-box {
+      max-width: 900px;
+
+      margin: auto;
+
+      padding: 60px 40px;
+
+      text-align: center;
+
+      border-radius: 28px;
+
+      border: 1px solid rgba(255,255,255,0.12);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,255,255,0.08),
+          transparent 60%
+        );
+    }
+
+    .subscription-box h2 {
+      font-size: clamp(35px, 6vw, 65px);
+
+      margin-bottom: 20px;
+    }
+
+    .subscription-box p {
+      color: #999;
+
+      max-width: 600px;
+
+      margin: 0 auto 35px;
+
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
 
     footer {
-        flex-direction: column;
-        gap: 10px;
-        padding: 30px 20px;
+      padding: 40px 20px;
+
+      text-align: center;
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+
+      color: #666;
+
+      font-size: 13px;
     }
-}
-</style>
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      header {
+        height: 65px;
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 17px;
+        letter-spacing: 2px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .header-button {
+        padding: 9px 15px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .telegram-section,
+      .subscription {
+        padding: 80px 20px;
+      }
+
+      .subscription-box {
+        padding: 45px 20px;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+  <!-- HEADER -->
 
-<header>
+  <header>
 
-    <a href="#home" class="logo">
-        <img src="IMG_0155.PNG" alt="LEYLI MEDIA">
+    <a href="#" class="logo">
+      LEYLI MEDIA
     </a>
 
     <nav>
-        <a href="#home">Bosh sahifa</a>
-        <a href="#services">Xizmatlar</a>
-        <a href="#about">Studio</a>
-        <a href="#contact">Aloqa</a>
-
-        <!-- TELEGRAM LINK -->
-        <a href="#telegram" class="telegram-top">
-            Telegram
-        </a>
+      <a href="#home">Bosh sahifa</a>
+      <a href="#telegram">Telegram</a>
+      <a href="#subscription">Obuna</a>
     </nav>
 
-</header>
+    <!-- TELEGRAM LINKNI KEYIN O'ZGARTIRAMIZ -->
+
+    <a
+      class="header-button"
+      href="https://t.me/"
+      target="_blank"
+    >
+      Telegram
+    </a>
+
+  </header>
 
 
-<!-- HERO -->
+  <!-- HERO -->
 
-<section class="hero" id="home">
+  <main id="home">
 
-    <div class="hero-content">
+    <section class="hero">
+
+      <div class="hero-content">
 
         <div class="small-title">
-            LEYLI MEDIA STUDIO
+          LEYLI MEDIA
         </div>
 
         <h1>
-            LEYLI<br>MEDIA
+          LEYLI
+          <span>MEDIA</span>
         </h1>
 
-        <h2>
-            YOUR VOICE. YOUR SOUND.
-        </h2>
-
-        <p class="hero-text">
-            Professional ovoz yozish studiyasi.
-            Qo‘shiq, vocal, podcast, voice-over
-            va audio loyihalar uchun sifatli recording.
+        <p class="hero-description">
+          Eksklyuziv musiqa, yangi ijodiy loyihalar,
+          audio materiallar va maxsus kontent —
+          barchasi bitta Telegram kanalda.
         </p>
 
+        <div class="buttons">
 
-        <!-- TELEGRAM ASOSIY MAQSAD -->
+          <a
+            href="https://t.me/"
+            target="_blank"
+            class="button button-primary"
+          >
+            Telegram kanalga kirish
+          </a>
 
-        <div class="telegram-box" id="telegram">
+          <a
+            href="#subscription"
+            class="button button-secondary"
+          >
+            Obuna bo‘lish
+          </a>
 
-            <div class="telegram-label">
-                ASOSIY KANAL
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TELEGRAM -->
+
+    <section
+      id="telegram"
+      class="telegram-section"
+    >
+
+      <div class="section-container">
+
+        <div class="section-label">
+          TELEGRAM KANAL
+        </div>
+
+        <h2>
+          Bu kanal<br>
+          nima uchun?
+        </h2>
+
+        <p class="telegram-text">
+
+          LEYLI MEDIA Telegram kanali —
+          musiqa va media ijodkorlari uchun
+          maxsus kontent maydoni.
+
+          Bu yerda yangi qo‘shiqlar, eksklyuziv
+          audio materiallar, backstage,
+          ijodiy loyihalar va boshqa maxsus
+          kontentlar joylashtiriladi.
+
+        </p>
+
+        <div class="buttons">
+
+          <a
+            href="https://t.me/"
+            target="_blank"
+            class="button button-primary"
+          >
+            Kanalga qo‘shilish
+          </a>
+
+        </div>
+
+
+        <div class="features">
+
+          <div class="feature">
+
+            <div class="feature-number">
+              01
             </div>
 
             <h3>
-                LEYLI MEDIA TELEGRAM
+              Eksklyuziv kontent
             </h3>
 
             <p>
-                Yangi qo‘shiqlar, studiya yangiliklari,
-                ijodiy loyihalar va boshqa yangiliklarni
-                Telegram kanalimizda kuzatib boring.
+              Faqat kanal obunachilari
+              uchun maxsus materiallar.
             </p>
 
-            <!-- SHU YERGA TELEGRAM KANAL HAVOLASINI QO'YAMIZ -->
-            <a
-                href="#"
-                class="telegram-button"
-                target="_blank"
-            >
-                Telegram kanalga o'tish →
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+          </div>
 
 
-<!-- SERVICES -->
+          <div class="feature">
 
-<section class="services" id="services">
+            <div class="feature-number">
+              02
+            </div>
 
-    <div class="section-label">
-        01 — XIZMATLAR
-    </div>
+            <h3>
+              Yangi musiqalar
+            </h3>
 
-    <h2>
-        Biz nima qilamiz
-    </h2>
-
-    <div class="service-grid">
-
-        <div class="service">
-            <div class="service-number">01</div>
-            <h3>Vocal Recording</h3>
             <p>
-                Professional mikrofon va studio
-                sharoitida sifatli ovoz yozish.
+              Yangi ijodiy loyihalar,
+              qo‘shiqlar va audio materiallar.
             </p>
-        </div>
 
-        <div class="service">
-            <div class="service-number">02</div>
-            <h3>Audio Production</h3>
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-number">
+              03
+            </div>
+
+            <h3>
+              LEYLI MEDIA
+            </h3>
+
             <p>
-                Mix, mastering va audio processing
-                xizmatlari.
+              Bitta platformada musiqa,
+              media va ijodiy loyihalar.
             </p>
+
+          </div>
+
         </div>
 
-        <div class="service">
-            <div class="service-number">03</div>
-            <h3>Voice-over</h3>
-            <p>
-                Reklama, video, podcast va boshqa
-                loyihalar uchun professional voice-over.
-            </p>
+      </div>
+
+    </section>
+
+
+    <!-- SUBSCRIPTION -->
+
+    <section
+      id="subscription"
+      class="subscription"
+    >
+
+      <div class="subscription-box">
+
+        <div class="section-label">
+          PREMIUM OBUNA
         </div>
 
-    </div>
+        <h2>
+          LEYLI MEDIA
+        </h2>
 
-</section>
+        <p>
+          Maxsus kontentga kirish uchun
+          obuna bo‘ling.
 
+          To‘lov amalga oshirilgandan so‘ng
+          Telegram kanalga kirish
+          avtomatik tarzda beriladi.
+        </p>
 
-<!-- ABOUT -->
+        <!-- KEYIN BU TUGMAGA TELEGRAM BOT LINKINI QO'YAMIZ -->
 
-<section class="about" id="about">
+        <a
+          href="https://t.me/"
+          target="_blank"
+          class="button button-primary"
+        >
+          Obuna bo‘lish
+        </a>
 
-    <div class="section-label">
-        02 — STUDIO
-    </div>
+      </div>
 
-    <h2>
-        Ovozga<br>professional yondashuv.
-    </h2>
+    </section>
 
-    <p class="about-text">
-        LEYLI MEDIA — ijodkorlar, xonandalar,
-        kontent yaratuvchilar va bizneslar uchun
-        professional ovoz yozish studiyasi.
-        Bizning maqsadimiz — har bir ovozni sifatli
-        va professional formatda yetkazish.
-    </p>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-    <div class="section-label">
-        03 — ALOQA
-    </div>
-
-    <h2>
-        Bog‘lanamiz.
-    </h2>
-
-    <p>
-        Studio haqida ma’lumot olish yoki
-        recording uchun bog‘laning.
-    </p>
-
-    <!-- TELEGRAM HAVOLASINI KEYIN SHU YERGA HAM QO'YAMIZ -->
-
-    <a href="#telegram" class="contact-button">
-        Telegram orqali bog‘lanish
-    </a>
-
-</section>
+  </main>
 
 
-<!-- FOOTER -->
+  <!-- FOOTER -->
 
-<footer>
+  <footer>
 
-    <div>
-        © 2026 LEYLI MEDIA
-    </div>
+    © 2026 LEYLI MEDIA.
+    Barcha huquqlar himoyalangan.
 
-    <div>
-        Ovoz. Sifat. Ijod.
-    </div>
-
-</footer>
+  </footer>
 
 
 </body>
-</html>
+</html>-
