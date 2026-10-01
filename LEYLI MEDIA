@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Leyli Media — Ovoz yozish studiyasi</title>
+  <meta name="description" content="Leyli Media — professional ovoz yozish studiyasi. Qo‘shiq yozish, vokal yozuvi va qo‘shiqni tayyor holga keltirish.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #050505;
+      color: #f5ead0;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12), transparent 35%),
+        #050505;
+    }
+
+    /* HEADER */
+
+    header {
+      width: 100%;
+      padding: 22px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: contain;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+
+    .brand-name {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      color: #d4af37;
+      letter-spacing: 1px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: #cfc5ae;
+    }
+
+    .nav a {
+      transition: 0.3s;
+    }
+
+    .nav a:hover {
+      color: #d4af37;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 28px;
+      filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.18));
+    }
+
+    .subtitle {
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 9vw, 92px);
+      font-weight: 400;
+      line-height: 0.95;
+      color: #f2e5c3;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #d4af37;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      margin: auto;
+      color: #aaa18f;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 190px;
+      padding: 15px 25px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37, #f1d77a);
+      color: #090909;
+      box-shadow: 0 10px 35px rgba(212, 175, 55, 0.15);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+    }
+
+    .btn-dark {
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: #d4af37;
+    }
+
+    .btn-dark:hover {
+      background: rgba(212, 175, 55, 0.08);
+      transform: translateY(-3px);
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      display: block;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(34px, 5vw, 52px);
+      color: #f2e5c3;
+    }
+
+    .section-title p {
+      max-width: 550px;
+      margin: 15px auto 0;
+      color: #8e887b;
+      line-height: 1.7;
+    }
+
+    /* SERVICES */
+
+    .services {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 35px;
+      min-height: 220px;
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      border-radius: 22px;
+      background: linear-gradient(
+        145deg,
+        rgba(212, 175, 55, 0.07),
+        rgba(255, 255, 255, 0.015)
+      );
+      transition: 0.35s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.5);
+      background: linear-gradient(
+        145deg,
+        rgba(212, 175, 55, 0.11),
+        rgba(255, 255, 255, 0.02)
+      );
+    }
+
+    .service-number {
+      color: #d4af37;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .service h3 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 13px;
+      color: #eee2c5;
+    }
+
+    .service p {
+      color: #918b7e;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .about-text {
+      color: #a39b8c;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    .gold-line {
+      width: 70px;
+      height: 1px;
+      background: #d4af37;
+      margin: 28px auto;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .phone {
+      display: inline-block;
+      margin-top: 28px;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 5vw, 46px);
+      color: #d4af37;
+      transition: 0.3s;
+    }
+
+    .phone:hover {
+      color: #f1d77a;
+    }
+
+    .contact-note {
+      margin-top: 15px;
+      color: #777166;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      color: #625e55;
+      font-size: 12px;
+    }
+
+    .footer-logo {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      opacity: 0.8;
+    }
+
+    .footer-name {
+      font-family: Georgia, serif;
+      color: #d4af37;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 16px 20px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 20px;
+      }
+
+      .brand-logo {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero {
+        min-height: 85vh;
+        padding: 55px 20px;
+      }
+
+      .hero-logo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+
+      .hero-text {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        padding: 28px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <a href="#top" class="brand">
+      <img src="logo.png" alt="Leyli Media" class="brand-logo">
+      <span class="brand-name">Leyli Media</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#services">Xizmatlar</a>
+      <a href="#about">Biz haqimizda</a>
+      <a href="#contact">Bog‘lanish</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <main id="top">
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <img src="logo.png" alt="Leyli Media logo" class="hero-logo">
+
+        <div class="subtitle">
+          Professional recording studio
+        </div>
+
+        <h1>
+          Ovozdan<br>
+          <span>san’atgacha.</span>
+        </h1>
+
+        <p class="hero-text">
+          Leyli Media — ijodkorlar uchun professional ovoz yozish studiyasi.
+          G‘oyangizni sifatli ovoz va professional yondashuv bilan tayyor
+          mahsulotga aylantiramiz.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#services" class="btn btn-gold">
+            Xizmatlar
+          </a>
+
+          <a href="tel:+998996676688" class="btn btn-dark">
+            Bog‘lanish
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+
+      <div class="section-title">
+        <small>Leyli Media</small>
+        <h2>Bizning xizmatlar</h2>
+        <p>
+          Musiqiy loyihangizni yozuvdan tayyor mahsulotgacha
+          professional tarzda amalga oshiramiz.
+        </p>
+      </div>
+
+      <div class="services">
+
+        <div class="service">
+          <div class="service-number">01 / RECORDING</div>
+          <h3>Ovoz yozish</h3>
+          <p>
+            Professional studiya sharoitida vokal va ovoz yozuvi.
+            Sifatli mikrofon va qulay ijodiy muhit.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">02 / VOCAL</div>
+          <h3>Vokal yozuvi</h3>
+          <p>
+            Xonandalar uchun vokal yozish jarayoni va qo‘shiq ustida
+            professional ishlash.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">03 / SONG</div>
+          <h3>Qo‘shiq yozish</h3>
+          <p>
+            Yangi qo‘shiq loyihangizni yaratish va studiyada yozib olish
+            uchun ijodiy muhit.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">04 / FULL PROJECT</div>
+          <h3>Qo‘shiq “pod klyuch”</h3>
+          <p>
+            G‘oyadan tayyor relizgacha bo‘lgan musiqiy loyihani
+            bir joyda tashkil qilish.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+      <div class="about">
+
+        <div class="section-title">
+          <small>About us</small>
+          <h2>Leyli Media</h2>
+        </div>
+
+        <div class="gold-line"></div>
+
+        <p class="about-text">
+          Biz musiqa va ijodkorlikni qadrlaymiz.
+          Leyli Media — xonandalar, musiqachilar va ijodkorlar
+          o‘z g‘oyalarini professional ovozga aylantirishi uchun
+          yaratilgan studiya.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+      <div class="contact">
+
+        <div class="section-title">
+          <small>Contact</small>
+          <h2>Loyihangizni boshlaymizmi?</h2>
+          <p>
+            Studiya haqida ma’lumot olish yoki yozuv uchun
+            bog‘laning.
+          </p>
+        </div>
+
+        <a href="tel:+998996676688" class="phone">
+          +998 99 667 66 88
+        </a>
+
+        <p class="contact-note">
+          Qo‘ng‘iroq qilish uchun raqam ustiga bosing
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <img src="logo.png" alt="Leyli Media" class="footer-logo">
+
+    <div class="footer-name">
+      Leyli Media
+    </div>
+
+    <p>
+      Professional ovoz yozish studiyasi
+    </p>
+
+    <br>
+
+    <p>
+      © 2026 Leyli Media. Barcha huquqlar himoyalangan.
+    </p>
+
+  </footer>
+
+</div>
+
+</body>
+</html>
