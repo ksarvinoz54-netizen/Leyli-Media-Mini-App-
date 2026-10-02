@@ -2,17 +2,16 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>LEYLI MEDIA</title>
 
-  <meta name="description"
-        content="LEYLI MEDIA — eksklyuziv musiqa, media kontent va ijodiy materiallar uchun Telegram kanal.">
+  <meta
+    name="description"
+    content="LEYLI MEDIA — eksklyuziv musiqa, media kontent va ijodiy materiallar uchun Telegram kanal."
+  >
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -33,6 +32,10 @@
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    button {
+      font-family: inherit;
     }
 
     header {
@@ -80,13 +83,10 @@
 
     .header-button {
       padding: 12px 20px;
-
       border: 1px solid rgba(255,255,255,0.3);
       border-radius: 30px;
-
       font-size: 13px;
       font-weight: bold;
-
       transition: 0.3s;
     }
 
@@ -128,13 +128,9 @@
 
     .hero h1 {
       font-size: clamp(55px, 12vw, 150px);
-
       line-height: 0.9;
-
       letter-spacing: -5px;
-
       font-weight: 900;
-
       margin-bottom: 35px;
     }
 
@@ -145,23 +141,16 @@
 
     .hero-description {
       max-width: 700px;
-
       margin: 0 auto 40px;
-
       font-size: 18px;
-
       line-height: 1.7;
-
       color: #bdbdbd;
     }
 
     .buttons {
       display: flex;
-
       justify-content: center;
-
       gap: 15px;
-
       flex-wrap: wrap;
     }
 
@@ -200,6 +189,7 @@
     .button-secondary {
       border: 1px solid rgba(255,255,255,0.3);
       color: #ffffff;
+      background: transparent;
     }
 
     .button-secondary:hover {
@@ -209,7 +199,6 @@
 
     .telegram-section {
       padding: 110px 20px;
-
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -228,36 +217,26 @@
     .telegram-section h2 {
       font-size: clamp(40px, 7vw, 80px);
       line-height: 1;
-
       margin-bottom: 30px;
     }
 
     .telegram-text {
       max-width: 720px;
-
       font-size: 18px;
-
       line-height: 1.8;
-
       color: #aaa;
-
       margin-bottom: 45px;
     }
 
     .features {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-
       margin-top: 50px;
     }
 
     .feature {
       padding: 30px;
-
       min-height: 190px;
 
       border: 1px solid rgba(255,255,255,0.1);
@@ -275,21 +254,17 @@
     .feature-number {
       font-size: 12px;
       color: #777;
-
       margin-bottom: 35px;
     }
 
     .feature h3 {
       font-size: 22px;
-
       margin-bottom: 12px;
     }
 
     .feature p {
       color: #999;
-
       line-height: 1.6;
-
       font-size: 14px;
     }
 
@@ -324,7 +299,6 @@
 
     .subscription-box h2 {
       font-size: clamp(35px, 6vw, 65px);
-
       margin-bottom: 20px;
     }
 
@@ -468,18 +442,10 @@
         <div class="buttons">
 
           <a
-            href="https://t.me/LEYLI.MDEIA.mp3"
-            target="_blank"
-            class="button button-primary"
-          >
-            Telegram kanal
-          </a>
-
-          <a
             href="#subscription"
             class="button button-secondary"
           >
-            💎 20 000 so‘m — 1 oy
+            Premium obuna
           </a>
 
         </div>
@@ -616,7 +582,7 @@
           class="button button-primary"
           onclick="startPayment()"
         >
-          💳 20 000 so‘m — Payme orqali to‘lash
+          💳 Payme orqali to‘lash
         </button>
 
       </div>
@@ -640,8 +606,13 @@
 
     function startPayment() {
 
-      alert(
-        "Payme to‘lovi keyingi bosqichda ulanadi."
+      const paymeUrl =
+        "https://payme.uz/fallback/merchant/?id=6ab52a1ca2b2e89ee143b4ca";
+
+      window.open(
+        paymeUrl,
+        "_blank",
+        "noopener,noreferrer"
       );
 
     }
