@@ -35,8 +35,6 @@
       color: inherit;
     }
 
-    /* HEADER */
-
     header {
       position: fixed;
       top: 0;
@@ -96,8 +94,6 @@
       background: white;
       color: black;
     }
-
-    /* HERO */
 
     .hero {
       min-height: 100vh;
@@ -193,6 +189,7 @@
     .button-primary {
       background: #ffffff;
       color: #000000;
+      border: none;
     }
 
     .button-primary:hover {
@@ -209,8 +206,6 @@
       background: #ffffff;
       color: #000000;
     }
-
-    /* TELEGRAM SECTION */
 
     .telegram-section {
       padding: 110px 20px;
@@ -298,8 +293,6 @@
       font-size: 14px;
     }
 
-    /* SUBSCRIPTION */
-
     .subscription {
       padding: 110px 20px;
 
@@ -345,7 +338,11 @@
       line-height: 1.7;
     }
 
-    /* FOOTER */
+    .price {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
 
     footer {
       padding: 40px 20px;
@@ -358,8 +355,6 @@
 
       font-size: 13px;
     }
-
-    /* MOBILE */
 
     @media (max-width: 750px) {
 
@@ -412,6 +407,9 @@
         padding: 45px 20px;
       }
 
+      .price {
+        font-size: 26px;
+      }
     }
 
   </style>
@@ -430,14 +428,12 @@
     <nav>
       <a href="#home">Bosh sahifa</a>
       <a href="#telegram">Telegram</a>
-      <a href="#subscription">Obuna</a>
+      <a href="#subscription">Premium</a>
     </nav>
-
-    <!-- TELEGRAM LINKNI KEYIN O'ZGARTIRAMIZ -->
 
     <a
       class="header-button"
-      href="https://t.me/"
+      href="https://t.me/LEYLI.MDEIA.mp3"
       target="_blank"
     >
       Telegram
@@ -466,24 +462,24 @@
         <p class="hero-description">
           Eksklyuziv musiqa, yangi ijodiy loyihalar,
           audio materiallar va maxsus kontent —
-          barchasi bitta Telegram kanalda.
+          barchasi bitta Premium Telegram kanalda.
         </p>
 
         <div class="buttons">
 
           <a
-            href="https://t.me/"
+            href="https://t.me/LEYLI.MDEIA.mp3"
             target="_blank"
             class="button button-primary"
           >
-            Telegram kanalga kirish
+            Telegram kanal
           </a>
 
           <a
             href="#subscription"
             class="button button-secondary"
           >
-            Obuna bo‘lish
+            💎 20 000 so‘m — 1 oy
           </a>
 
         </div>
@@ -503,7 +499,7 @@
       <div class="section-container">
 
         <div class="section-label">
-          TELEGRAM KANAL
+          PREMIUM TELEGRAM KANAL
         </div>
 
         <h2>
@@ -513,7 +509,7 @@
 
         <p class="telegram-text">
 
-          LEYLI MEDIA Telegram kanali —
+          LEYLI MEDIA Premium Telegram kanali —
           musiqa va media ijodkorlari uchun
           maxsus kontent maydoni.
 
@@ -523,19 +519,6 @@
           kontentlar joylashtiriladi.
 
         </p>
-
-        <div class="buttons">
-
-          <a
-            href="https://t.me/"
-            target="_blank"
-            class="button button-primary"
-          >
-            Kanalga qo‘shilish
-          </a>
-
-        </div>
-
 
         <div class="features">
 
@@ -550,7 +533,7 @@
             </h3>
 
             <p>
-              Faqat kanal obunachilari
+              Faqat Premium obunachilar
               uchun maxsus materiallar.
             </p>
 
@@ -616,24 +599,25 @@
           LEYLI MEDIA
         </h2>
 
-        <p>
-          Maxsus kontentga kirish uchun
-          obuna bo‘ling.
+        <div class="price">
+          20 000 so‘m / 1 oy
+        </div>
 
-          To‘lov amalga oshirilgandan so‘ng
-          Telegram kanalga kirish
-          avtomatik tarzda beriladi.
+        <p>
+          LEYLI MEDIA Premium kanaliga
+          1 oyga obuna bo‘ling.
+
+          Eksklyuziv musiqa, audio materiallar
+          va maxsus kontentlarga ega bo‘ling.
         </p>
 
-        <!-- KEYIN BU TUGMAGA TELEGRAM BOT LINKINI QO'YAMIZ -->
-
-        <a
-          href="https://t.me/"
-          target="_blank"
+        <button
+          type="button"
           class="button button-primary"
+          onclick="startPayment()"
         >
-          Obuna bo‘lish
-        </a>
+          💳 20 000 so‘m — Payme orqali to‘lash
+        </button>
 
       </div>
 
@@ -652,5 +636,17 @@
   </footer>
 
 
+  <script>
+
+    function startPayment() {
+
+      alert(
+        "Payme to‘lovi keyingi bosqichda ulanadi."
+      );
+
+    }
+
+  </script>
+
 </body>
-</html>-
+</html>
