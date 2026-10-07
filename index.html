@@ -2,622 +2,111 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#1c1c1e">
   <title>LEYLI MEDIA</title>
-
-  <meta
-    name="description"
-    content="LEYLI MEDIA — eksklyuziv musiqa, media kontent va ijodiy materiallar uchun Telegram kanal."
-  >
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #050505;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-      min-height: 100vh;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 76px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 6%;
-
-      background: rgba(5, 5, 5, 0.82);
-      backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: 3px;
-    }
-
-    nav {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
-
-    nav a {
-      font-size: 14px;
-      color: #bdbdbd;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    .header-button {
-      padding: 12px 20px;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .header-button:hover {
-      background: white;
-      color: black;
-    }
-
-    .hero {
-      min-height: 100vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
-      padding: 120px 20px 80px;
-
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(255,255,255,0.10),
-          transparent 35%
-        ),
-        #050505;
-    }
-
-    .hero-content {
-      max-width: 1000px;
-    }
-
-    .small-title {
-      font-size: 13px;
-      letter-spacing: 7px;
-      color: #999;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 {
-      font-size: clamp(55px, 12vw, 150px);
-      line-height: 0.9;
-      letter-spacing: -5px;
-      font-weight: 900;
-      margin-bottom: 35px;
-    }
-
-    .hero h1 span {
-      display: block;
-      color: #ffffff;
-    }
-
-    .hero-description {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      font-size: 18px;
-      line-height: 1.7;
-      color: #bdbdbd;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      min-width: 210px;
-
-      padding: 16px 28px;
-
-      border-radius: 40px;
-
-      font-size: 14px;
-
-      font-weight: bold;
-
-      transition: 0.3s;
-
-      cursor: pointer;
-    }
-
-    .button-primary {
-      background: #ffffff;
-      color: #000000;
-      border: none;
-    }
-
-    .button-primary:hover {
-      transform: translateY(-3px);
-      background: #e8e8e8;
-    }
-
-    .button-secondary {
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #ffffff;
-      background: transparent;
-    }
-
-    .button-secondary:hover {
-      background: #ffffff;
-      color: #000000;
-    }
-
-    .telegram-section {
-      padding: 110px 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .section-container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-label {
-      font-size: 12px;
-      letter-spacing: 5px;
-      color: #777;
-      margin-bottom: 20px;
-    }
-
-    .telegram-section h2 {
-      font-size: clamp(40px, 7vw, 80px);
-      line-height: 1;
-      margin-bottom: 30px;
-    }
-
-    .telegram-text {
-      max-width: 720px;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #aaa;
-      margin-bottom: 45px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 50px;
-    }
-
-    .feature {
-      padding: 30px;
-      min-height: 190px;
-
-      border: 1px solid rgba(255,255,255,0.1);
-
-      border-radius: 20px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.07),
-          rgba(255,255,255,0.02)
-        );
-    }
-
-    .feature-number {
-      font-size: 12px;
-      color: #777;
-      margin-bottom: 35px;
-    }
-
-    .feature h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .feature p {
-      color: #999;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .subscription {
-      padding: 110px 20px;
-
-      background: #080808;
-
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .subscription-box {
-      max-width: 900px;
-
-      margin: auto;
-
-      padding: 60px 40px;
-
-      text-align: center;
-
-      border-radius: 28px;
-
-      border: 1px solid rgba(255,255,255,0.12);
-
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(255,255,255,0.08),
-          transparent 60%
-        );
-    }
-
-    .subscription-box h2 {
-      font-size: clamp(35px, 6vw, 65px);
-      margin-bottom: 20px;
-    }
-
-    .subscription-box p {
-      color: #999;
-
-      max-width: 600px;
-
-      margin: 0 auto 35px;
-
-      line-height: 1.7;
-    }
-
-    .price {
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 25px;
-    }
-
-    footer {
-      padding: 40px 20px;
-
-      text-align: center;
-
-      border-top: 1px solid rgba(255,255,255,0.08);
-
-      color: #666;
-
-      font-size: 13px;
-    }
-
-    @media (max-width: 750px) {
-
-      header {
-        height: 65px;
-        padding: 0 20px;
-      }
-
-      .logo {
-        font-size: 17px;
-        letter-spacing: 2px;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .header-button {
-        padding: 9px 15px;
-        font-size: 11px;
-      }
-
-      .hero {
-        padding-top: 110px;
-      }
-
-      .hero h1 {
-        letter-spacing: -3px;
-      }
-
-      .hero-description {
-        font-size: 15px;
-      }
-
-      .button {
-        width: 100%;
-        max-width: 320px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .telegram-section,
-      .subscription {
-        padding: 80px 20px;
-      }
-
-      .subscription-box {
-        padding: 45px 20px;
-      }
-
-      .price {
-        font-size: 26px;
-      }
-    }
-
-  </style>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <section id="screen-loading" class="page">
+    <div class="spinner"></div>
+  </section>
 
-  <!-- HEADER -->
+  <section id="screen-error" class="page hidden">
+    <p class="top-brand">LEYLI MEDIA</p>
+    <h1>Premium bot</h1>
+    <p class="hint">Mini ilovani bot orqali oching.</p>
+  </section>
 
-  <header>
+  <section id="page-about" class="page hidden">
+    <p class="top-brand">LEYLI MEDIA</p>
+    <div class="logo-card">
+      <img src="logo.png" alt="LEYLI MEDIA">
+    </div>
+    <h1>Premium kanal</h1>
+    <p class="hint">
+      Eksklyuziv musiqa, yangi ijodiy loyihalar, audio materiallar va maxsus kontent.
+    </p>
+    <div class="buy-dock">
+      <button type="button" class="btn btn-gold" id="about-buy">Obuna sotib olish</button>
+    </div>
+  </section>
 
-    <a href="#" class="logo">
-      LEYLI MEDIA
-    </a>
+  <section id="page-plans" class="page page-plans hidden">
+    <h1>Obunalar to‘plami</h1>
+    <p class="hint">Tanlangan obuna to‘lov qilingan sanadan boshlab belgilangan muddatgacha amal qiladi!</p>
+    <div id="plans" class="plans"></div>
+    <button type="button" class="detail" id="detail-btn">Obuna haqida batafsil</button>
+    <div class="buy-dock">
+      <button type="button" class="btn btn-buy" id="buy-btn">Obuna sotib olish</button>
+    </div>
+  </section>
 
-    <nav>
-      <a href="#home">Bosh sahifa</a>
-      <a href="#telegram">Telegram</a>
-      <a href="#subscription">Premium</a>
-    </nav>
+  <section id="page-pay" class="page page-pay hidden">
+    <h1>To‘lovlar</h1>
+    <div class="logo-card">
+      <img src="logo.png" alt="LEYLI MEDIA">
+    </div>
+    <p class="field-label">To‘lov miqdori</p>
+    <div class="amount-box" id="amount-view"></div>
+    <div class="chips" id="amount-chips"></div>
+    <p class="info">
+      <span class="info-ico">i</span>
+      Payme belgisini yoki Davom etishni bosing — to‘lov ochiladi. F.I.Sh, telefon va summani qayta kiritishingiz shart emas.
+    </p>
+    <p class="field-label field-label-center">Payme orqali to‘lov qilish</p>
+    <div class="methods">
+      <button type="button" class="method selected" id="payme-btn" aria-label="Payme">
+        <img src="payme.png" alt="Payme" class="method-payme">
+      </button>
+    </div>
+    <div class="buy-dock dock-split">
+      <button type="button" class="btn btn-ghost" id="pay-back">Orqaga</button>
+      <button type="button" class="btn btn-buy" id="pay-next">Davom etish</button>
+    </div>
+  </section>
 
-    <a
-      class="header-button"
-      href="https://t.me/LEYLI.MDEIA.mp3"
-      target="_blank"
-    >
-      Telegram
-    </a>
+  <section id="page-done" class="page hidden">
+    <h1>To‘lov</h1>
+    <p class="status" id="done-status">Tekshirilmoqda…</p>
+    <p class="hint" id="done-hint">Payme to‘lovi tasdiqlansa, kanal havolasi botga yuboriladi.</p>
+    <button type="button" class="btn btn-gold" id="done-link">Kanal havolasini olish</button>
+    <button type="button" class="btn btn-ghost" id="done-back">Bosh sahifa</button>
+  </section>
 
-  </header>
+  <section id="page-panel" class="page hidden">
+    <p class="top-brand">LEYLI MEDIA</p>
+    <p class="id-row"><span id="panel-id"></span>
+      <button type="button" class="icon-btn" id="refresh-btn" aria-label="Yangilash">↻</button>
+    </p>
+    <p class="hint">Obuna holati</p>
+    <p class="status" id="panel-status"></p>
+    <button type="button" class="btn btn-gold" id="link-btn">Yopiq kanalga qo‘shilish</button>
+    <button type="button" class="btn btn-ghost" id="panel-buy-btn">Obuna ulash</button>
+    <div class="menu">
+      <button type="button" class="menu-row" id="menu-pay"><span>To‘lovlar</span><span class="chevron">›</span></button>
+      <button type="button" class="menu-row" id="menu-subs"><span>Obunalarim</span><span class="chevron">›</span></button>
+    </div>
+    <div class="menu hidden" id="menu-links">
+      <a class="menu-row hidden" id="menu-help" href="#" target="_blank" rel="noreferrer"><span>Yordam</span><span class="chevron">›</span></a>
+      <a class="menu-row hidden" id="menu-ig" href="#" target="_blank" rel="noreferrer"><span>instagram</span><span class="chevron">›</span></a>
+      <a class="menu-row hidden" id="menu-yt" href="#" target="_blank" rel="noreferrer"><span>Youtube</span><span class="chevron">›</span></a>
+    </div>
+  </section>
 
-
-  <!-- HERO -->
-
-  <main id="home">
-
-    <section class="hero">
-
-      <div class="hero-content">
-
-        <div class="small-title">
-          LEYLI MEDIA
-        </div>
-
-        <h1>
-          LEYLI
-          <span>MEDIA</span>
-        </h1>
-
-        <p class="hero-description">
-          Eksklyuziv musiqa, yangi ijodiy loyihalar,
-          audio materiallar va maxsus kontent —
-          barchasi bitta Premium Telegram kanalda.
-        </p>
-
-        <div class="buttons">
-
-          <a
-            href="#subscription"
-            class="button button-secondary"
-          >
-            Premium obuna
-          </a>
-
-        </div>
-
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <p class="modal-title" id="modal-title">LEYLI MEDIA</p>
+        <button type="button" class="icon-btn" id="modal-x" aria-label="Yopish">×</button>
       </div>
+      <p id="modal-text"></p>
+      <button type="button" class="modal-ok" id="modal-close">OK</button>
+    </div>
+  </div>
 
-    </section>
-
-
-    <!-- TELEGRAM -->
-
-    <section
-      id="telegram"
-      class="telegram-section"
-    >
-
-      <div class="section-container">
-
-        <div class="section-label">
-          PREMIUM TELEGRAM KANAL
-        </div>
-
-        <h2>
-          Bu kanal<br>
-          nima uchun?
-        </h2>
-
-        <p class="telegram-text">
-
-          LEYLI MEDIA Premium Telegram kanali —
-          musiqa va media ijodkorlari uchun
-          maxsus kontent maydoni.
-
-          Bu yerda yangi qo‘shiqlar, eksklyuziv
-          audio materiallar, backstage,
-          ijodiy loyihalar va boshqa maxsus
-          kontentlar joylashtiriladi.
-
-        </p>
-
-        <div class="features">
-
-          <div class="feature">
-
-            <div class="feature-number">
-              01
-            </div>
-
-            <h3>
-              Eksklyuziv kontent
-            </h3>
-
-            <p>
-              Faqat Premium obunachilar
-              uchun maxsus materiallar.
-            </p>
-
-          </div>
-
-
-          <div class="feature">
-
-            <div class="feature-number">
-              02
-            </div>
-
-            <h3>
-              Yangi musiqalar
-            </h3>
-
-            <p>
-              Yangi ijodiy loyihalar,
-              qo‘shiqlar va audio materiallar.
-            </p>
-
-          </div>
-
-
-          <div class="feature">
-
-            <div class="feature-number">
-              03
-            </div>
-
-            <h3>
-              LEYLI MEDIA
-            </h3>
-
-            <p>
-              Bitta platformada musiqa,
-              media va ijodiy loyihalar.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SUBSCRIPTION -->
-
-    <section
-      id="subscription"
-      class="subscription"
-    >
-
-      <div class="subscription-box">
-
-        <div class="section-label">
-          PREMIUM OBUNA
-        </div>
-
-        <h2>
-          LEYLI MEDIA
-        </h2>
-
-        <div class="price">
-          20 000 so‘m / 1 oy
-        </div>
-
-        <p>
-          LEYLI MEDIA Premium kanaliga
-          1 oyga obuna bo‘ling.
-
-          Eksklyuziv musiqa, audio materiallar
-          va maxsus kontentlarga ega bo‘ling.
-        </p>
-
-        <button
-          type="button"
-          class="button button-primary"
-          onclick="startPayment()"
-        >
-          💳 Payme orqali to‘lash
-        </button>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    © 2026 LEYLI MEDIA.
-    Barcha huquqlar himoyalangan.
-
-  </footer>
-
-
-  <script>
-
-    function startPayment() {
-
-      const paymeUrl =
-        "https://payme.uz/fallback/merchant/?id=6ab52a1ca2b2e89ee143b4ca";
-
-      window.open(
-        paymeUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
-
-    }
-
-  </script>
-
+  <script src="app.js?v=16"></script>
 </body>
 </html>
